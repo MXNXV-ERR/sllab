@@ -1,3 +1,10 @@
+# Write Python code to do the following:
+# i. Create list with inputs from user
+# ii. Determine minimum and maximum elements in the list
+# iii. Insert new element into the list
+# iv. Delete an element from the list
+# v. Determine if an element is present in the list
+
 li=[]
 n= input("Enter number of elements")
 print("Enter "+ n + " values")
