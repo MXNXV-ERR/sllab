@@ -43,8 +43,8 @@ while(1):
         else:
             print("Invalid input!!!")
             continue
-        print("Ans:"+ans+to.upper())
-        x=[str(n),str("to"),str(ans+to.upper())]
+        print("Ans:"+ans+to)
+        x=[str(n),str("to"),str(ans+to)]
         history.append(tuple(x))
     elif ch==2:
         print(history)
