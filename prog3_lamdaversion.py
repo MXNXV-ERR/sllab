@@ -20,25 +20,25 @@ while(1):
         unit=n[-1].upper()
         to=input("Enter the unit to which u wanna convert(c/f/k)").upper()
         if unit=="K" and to=="C":
-            ans=str(ktoc(val))
+            ans=ktoc(val)
         elif unit=="K" and to=="F":
-            ans=str(ktof(val))
+            ans=ktof(val)
         elif unit=="C" and to=="F":
-            ans=str(ctof(val))
+            ans=ctof(val)
         elif unit=="C" and to=="K":
-            ans=str(ctok(val))
+            ans=ctok(val)
         elif unit=="F" and to=="C":
-            ans=str(ftoc(val))
+            ans=ftoc(val)
         elif unit=="F" and to=="K":
-            ans=str(ftok(val))
+            ans=ftok(val)
         elif unit==to:
             print("Something is really wrong with you!!!!")
             continue
         else:
             print("Invalid input!!!")
             continue
-        print("Ans:"+ans+to)
-        x=[str(n),str("to"),str(ans+to)]
+        print("Ans:"+str(ans)+str(to))
+        x=[val,unit,"to",ans,to]
         history.append(tuple(x))
     elif ch==2:
         print(history)
