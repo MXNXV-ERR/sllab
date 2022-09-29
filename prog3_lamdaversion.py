@@ -13,6 +13,7 @@ ftok = lambda a:273.5 + ftoc(a)
 ktof = lambda a: 1.8*(ctok(a)) + 32
 
 while(1):
+    print("Main Menu".center(40,"#"))
     ch=int(input("1.Conversion\n2.History\n3.EXIT\nEnter your choice(int only):"))
     if ch==1:
         n=input("Enter temperature you would like to convert with unit(Eg:20C,50.00k...):")
@@ -38,10 +39,17 @@ while(1):
             print("Invalid input!!!")
             continue
         print("Ans:"+str(ans)+str(to))
-        x=[val,unit,"to",ans,to]
+        x=[val,unit,"to",round(ans,3),to]
         history.append(tuple(x))
     elif ch==2:
-        print(history)
+        c=input("1.Order by from-value\n2.Order by to-value\nEnter your choice:")
+        print("😏=H=I=S=T=O=R=Y".center(40,"="))
+        if c=='1':
+            print(*sorted(history,key=lambda x:x[0]),sep="\n")
+        elif c=='2':
+            print(*sorted(history,key=lambda x:x[3]),sep="\n")
+        else:
+            print("Invalid input,kid!!!")
     elif ch==3:
         break
     else:
