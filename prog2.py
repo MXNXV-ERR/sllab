@@ -10,8 +10,8 @@ class Rectangle:
     def findArea(self):
         return int(self.length)* int(self.breadth);
 
+obj=Rectangle(5,10)
+print("Area of Initial rectangle:"+str(obj.findArea()))
 n,m=input("Enter dimensions of rectanlge space separated").split()
-obj=Rectangle(int(n),int(m))
-print("Area:" + str(obj.findArea()))
-
-
+obj1=Rectangle(int(n),int(m))
+print("Area:" + str(obj1.findArea()))
