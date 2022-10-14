@@ -20,7 +20,7 @@ class Student:     #Class created
         print("Age: "+self.age)
         print(self.marks)
 #First Object
-print("Student 1:\n")
+print("Student 1:")
 s=Student()
 s.accept()
 #Second Object
