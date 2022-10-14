@@ -6,9 +6,9 @@
 
 history=[]
 def ktoc(a):
-    return a+273.15
-def ctok(a):
     return a-273.15
+def ctok(a):
+    return a+273.15
 def ctof(a):
     return  9.0/5.0 * a + 32
 def ftoc(a):
