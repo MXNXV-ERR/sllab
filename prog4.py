@@ -7,9 +7,9 @@
 
 class Student:     #Class created
     def __init__(self):
-        self.name=input("Enter your name:")
-        self.age=input("Enter your age:")     #name and age attributes along with the list
-        self.marks=[]                          # to contain marks for 3 subjects
+        self.name=input("Enter student name:")
+        self.age=input("Enter student age:")     #name and age attributes along with the list
+        self.marks=[]                                       # to contain marks for 3 subjects
 
     def accept(self):#Accepting values through 'accept' function
         for i in range(3):
@@ -18,15 +18,16 @@ class Student:     #Class created
     def display(self): #Displaying values through 'display' function
         print("Name: "+self.name)
         print("Age: "+self.age)
+        print("Three subject marks are:")
         print(self.marks)
 #First Object
 print("Student 1:")
 s=Student()
 s.accept()
 #Second Object
-print("Student 2:\n")
-s2=Student()
-s2.accept()
+print("Student 2:")
+s1=Student()
+s1.accept()
 #Print details of object 
-s.display()
-s2.display()
+print("\nStudeunt 1");s.display()
+print("\nStudeunt 2");s1.display()
