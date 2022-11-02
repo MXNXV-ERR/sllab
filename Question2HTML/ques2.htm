@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Total Price
+        </title>
+        <meta http-equiv="refresh" content="1">
+        <h3 align= "center"> Total Billing</h3>
+        Item Name : <input type ="text" id="Name"/><br><br>
+        Item Price : <input type ="text" id="Price"/><br><br>
+        Item Quantity : <input type ="text" id="Quantity"/><br><br><br>
+        <input type ="button" onclick="calculate()" value="Submit"/><br><br>
+        <p>
+            Total price =<span id=result>XXX</span>
+        </p>
+        <p>
+            <input type ="button" onclick="paid()" value="Pay"><br>
+        </p>
+   
+    </head>
+    <body>
+        <script lang = "JavaScript">
+            function calculate(){
+                x=document.getElementById("Price").value;
+                y=document.getElementById("Quantity").value;
+                res=x*y;
+                document.getElementById("result").innerHTML=res;
+            }
+            function paid(){
+                alert("Paid ");
+            }
+        </script>
+    </body>
+</html>
