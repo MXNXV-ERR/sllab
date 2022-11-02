@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Total Price</title>
+</head>
+<h3 align="centre" >Total billing</h3>
+Item name:<input type="text" id="iname"><br><br>
+Item price:<input type="text" id="iprice"><br><br>
+Item qty:<input type="text" id="iqty"><br><br>
+<input type="button" onclick="calculate()" value="submit">
+<p>
+    Total price=<span id="result"></span>
+</p>
+<img src="paid.png" height="400" id="img" style="visibility: hidden;">
+
+<body>
+    <script>
+        function calculate(){
+            x=document.getElementById("iprice").value;
+            y=document.getElementById("iqty").value;
+            res=x*y;
+            document.getElementById('result').innerHTML=res;
+            x=document.getElementById("img").style.visibility="visible";
+            //alert('ans is'+res);
+        }   
+    </script>
+</body>
+</html>
