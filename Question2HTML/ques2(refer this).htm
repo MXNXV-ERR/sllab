@@ -4,16 +4,18 @@
         <title>
             Total Price
         </title>
-        <meta http-equiv="refresh" content="1">
+        <!-- Heading and Textboxes with ids to link with JavaScript code -->
         <h3 align= "center"> Total Billing</h3>
         Item Name : <input type ="text" id="Name"/><br><br>
         Item Price : <input type ="text" id="Price"/><br><br>
         Item Quantity : <input type ="text" id="Quantity"/><br><br><br>
         <input type ="button" onclick="calculate()" value="Submit"/><br><br>
         <p>
+            <!-- Result printed using the span tag -->
             Total price =<span id=result>XXX</span>
         </p>
         <p>
+            <!-- Pay button to generate ALERT -->
             <input type ="button" onclick="paid()" value="Pay"><br>
         </p>
    
@@ -21,12 +23,15 @@
     <body>
         <script lang = "JavaScript">
             function calculate(){
+                //Calculate the price of product
                 x=document.getElementById("Price").value;
                 y=document.getElementById("Quantity").value;
                 res=x*y;
+                //Result sent back to HTML code
                 document.getElementById("result").innerHTML=res;
             }
             function paid(){
+               //Generate ALERT 
                 alert("Paid ");
             }
         </script>
