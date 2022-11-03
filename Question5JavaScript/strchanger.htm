@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            String conversion
+             </title>
+             <h3>Question 5</h3>
+             <p> The input string is : <Input type ="text" id = "String1"/> <br><span id = "String1">
+                <Input type = "button"  onclick = "convert()" value = "Submit"/>
+             </span></p>
+
+
+            </head>
+            <body>
+                <script>
+                    function convert()
+                    {
+                        
+                    string1 = document.getElementById("String1").value
+                    str = string1.split('')
+                    for(i=0;i<str.length;i++)
+                    {
+                        switch(str[i])
+                        {
+                            case " ": break;
+                            case 'z': str[i] = 'a'; break;
+                            case 'Z': str[i] = 'A'; break;
+                            default:
+                                str[i] = String.fromCharCode(1+str[i].charCodeAt());
+                        }
+                        switch(str[i])
+                        {
+                            case 'a':
+                            case 'e':
+                            case 'i':
+                            case 'o':
+                            case 'u': str[i] = str[i].toUpperCase();
+                            break;
+                        }
+                    }
+                    str = str.join('');  
+                    document.getElementById("string").innerHTML = str;                  
+                    }    
+                </script>
+                Output : <span id = "string"></span>
+            </body>
+</html>
+
+
+
+
+
+
+<!-- CC:Jayanth Jadav @https://github.com/nishJay/Scripting-Lab-Codes/blob/main/q5.html -->
