@@ -1,3 +1,9 @@
+<!-- Javascript: The function LetterSurround(str) needs to find out if the string passed is an
+acceptable sequence by either returning true or false. The string parameter will be composed of
++ and = symbols with several characters between them. For the string to be true each letter
+must be surrounded by + symbol. Test Cases: The string will not be empty and will have at
+least one letter. -->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,28 +11,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>String validation</title>
-    <p>input string is<span id="str1"></span></p>
-    <p>output string is <span id="str2"></span></p>
+    <!-- Simple front end -->
+    <h1>String validation</h1>
+    <p>Input string : <input type="text" id="str1"></p>
+    <button onclick="caller()">Click</button>
+    <p>Output : <span id="str2">???</span></p>
 </head>
 <body>
     <script>
-        str="+f==r+";
-        function valstr(s)
+        function LetterSurround(str)
         {
-            if(s[0]>='a' || s[s.length-1]>='a')
+            //Invalid conditions
+            if(str=="") return "INVALID BRO";
+            if(str[0]>='a' || str[str.length-1]>='a'||str[0]=='='||str[str.length-1]=='=')
                 return false;
-            for(i=1;i<s.length-1;i++)
-            {
-                if(s[i]>'a')
+            for(i=1;i<str.length-1;i++)
+            {//Find matching +`s
+                if(str[i]>'a')
                 {
-                    if(s[i-1]!='+'||s[i+1]!='+')
-                        return false;
+                    if(str[i-1]!='+'||str[i+1]!='+')
+                        return true;
                 }
              }
-             return true;
-        }   
-        document.getElementById('str1').innerHTML=str;
-        document.getElementById('str2').innerHTML=valstr(str);
+             //If no match retrun false
+             return false;
+        }  
+        function caller()
+        {//Get input - call function - return to HTML for output
+        str=document.getElementById('str1').value;
+        document.getElementById('str2').innerHTML=LetterSurround(str);
+        }
     </script>
 </body>
 </html>

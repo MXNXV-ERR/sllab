@@ -5,19 +5,17 @@
             String conversion
              </title>
              <h3>Question 5</h3>
+             <!-- Simple front end -->
              <p> The input string is : <Input type ="text" id = "String1"/> <br><span id = "String1">
                 <Input type = "button"  onclick = "convert()" value = "Submit"/>
              </span></p>
-
-
-            </head>
+    </head>
             <body>
                 <script>
                     function convert()
-                    {
-                        
+                    {//Input from HTML to javascript   
                     string1 = document.getElementById("String1").value
-                    str = string1.split('')
+                    str = string1.split('')//split into individual characters
                     for(i=0;i<str.length;i++)
                     {
                         switch(str[i])
@@ -25,11 +23,11 @@
                             case " ": break;
                             case 'z': str[i] = 'a'; break;
                             case 'Z': str[i] = 'A'; break;
-                            default:
+                            default://Change to next char
                                 str[i] = String.fromCharCode(1+str[i].charCodeAt());
                         }
                         switch(str[i])
-                        {
+                        {//Capitalize vowels
                             case 'a':
                             case 'e':
                             case 'i':
@@ -37,7 +35,7 @@
                             case 'u': str[i] = str[i].toUpperCase();
                             break;
                         }
-                    }
+                    }//Send back converted string to HTML
                     str = str.join('');  
                     document.getElementById("string").innerHTML = str;                  
                     }    
