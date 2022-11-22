@@ -1,0 +1,59 @@
+<!-- JavaScript – Client Side Validation: Design a case study for a Bakery that creates and
+validates a HTML form at the client side using Javascript. Bakery Menu & Price calculation
+of items bought should be the result. Perform the necessary Client Side validation using
+JavaScript. -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Bakery
+        </title>
+    </head>
+    <body>
+        <h1>Bakery</h1>
+        <script lang="JavaScript">
+        const cost = new Map([["Bread",10],["Puff",20]]);
+        function popup(id)
+        {
+            document.getElementById(id).innerHTML=prompt("Enter quantity");
+            document.getElementById("autoTable").innerHTML="";//resets table
+        }
+        function tableBuilder()
+        {
+            
+            var table=document.getElementById("autoTable");
+            var header=table.insertRow(0).innerHTML="<th>Item name</th>\
+                                                                                <th>Quantity</th>\
+                                                                                <th>Price</th>\
+                                                                                <th>Total Price</th>";
+            var itemList=Array.from(cost.keys());
+            for(let i=1;i<=cost.size;i++)
+            {   var row=table.insertRow(i);
+                var item=itemList[i-1];
+                row.insertCell(0).innerHTML=item;
+                var a=row.insertCell(1).innerHTML=document.getElementById(item).innerHTML;
+                var b=row.insertCell(2).innerHTML=cost.get(item);
+                row.insertCell(3).innerHTML=a*b;
+            }
+            var footer=table.insertRow();
+            footer.innerHTML="<td colspan=\"3\">Total bill</td>";
+            sum=0;
+            for(let i=1;i<table.rows.length-1;i++)
+            {
+                sum+=parseInt(table.rows[i].cells[3].innerHTML);
+            }
+            footer.insertCell(1).innerHTML=sum;
+        }
+        </script>
+        <button onclick="popup('Bread')"><img src="bread.jpg" height="100"></button>
+        <p>
+            Current quantity ordered:<span id="Bread">0</span>
+        </p><button onclick="popup('Puff')"><img src="puff.jpg"></button>
+        <p>
+            Current quantity ordered:<span id="Puff">0</span>
+        </p>
+        <p><button onclick="tableBuilder()">Generate bill</button></p>
+        <table id="autoTable" border="1" cellspacing="1" cellpadding="5"></table>
+    </body>
+</html>
