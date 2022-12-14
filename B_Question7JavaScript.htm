@@ -1,45 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Document</title>
+    <title>Question 7</title>
 </head>
 <body>
     <form>
         <p>
-            enter the string 
+            Enter the string 
         </p>
         <input type="text" id="str1">
         <br>
         <input type="button" onclick="func()" value="submit">
-        <p id="final1">
-
-        </p>
-        <p id="final2">
-
-        </p>
+        <p id="final1"></p>
+        <p id="final2"></p>
     </form>
     <script>
         var mylength=[];
-        //var neww=[];
         var original_string=["hi","wru","iam here"];
         const func2 =(arr1,arr2)=>
         {
             for(i=0;i<arr2.length;i++)
-            {
                 if(arr2[i]>3)
-                {
                     neww.push(arr1[i]);
-                }
-            }
-            
             document.getElementById("final2").innerHTML=neww;
         }
         function func1()
-        {
+        {  
             for(i=0;i<original_string.length;i++)
-            {
                 mylength[i]=original_string[i].length;
-            }
         }
         function func()
         {
@@ -48,8 +36,6 @@
             func1();
             document.getElementById("final1").innerHTML=" original string \n "+original_string+"\n length of string "+mylength;
             func2(original_string,mylength);
-           
-
         }
     </script>
 </body>
