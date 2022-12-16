@@ -1,3 +1,7 @@
+# Write a Python program to perform the following:
+# • Apply histogram equalization on the given image for contrast enhancement.
+# • Detect edges in the given image.
+
 import numpy as np
 from PIL import Image, ImageFilter
 img_filename = 'input_image.jpg'
