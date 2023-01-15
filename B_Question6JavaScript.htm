@@ -31,7 +31,13 @@ d. Determine the position of occurrence of the search string in the given string
             document.getElementById('d').innerHTML=digit;
             document.getElementById('w').innerHTML=white;
             document.getElementById('a').innerHTML=alpha;
-            document.getElementById('o').innerHTML=txt.match(new RegExp(pat,'g')).length;
+            count=0;
+            a=txt.split(' ');
+            for( i=0;i<a.length;i++)
+                if(a[i]==pat)
+                    count+=1;
+            document.getElementById('o').innerHTML=count;
+            document.getElementById('pos').innerHTML=txt.indexOf(pat);
         }
     </script>
     <h1>Question 6</h1>
@@ -43,6 +49,6 @@ d. Determine the position of occurrence of the search string in the given string
     No of alphabet:<span id="a"></span><br><br>
     No of whitespaces:<span id="w"></span><br><br>
     No of occurance:<span id="o"></span><br><br>
-    Positions(working on it):<span id="pos"></span><br><br>
+    Positions:<span id="pos"></span><br><br>
 </body>
 </html>
