@@ -13,42 +13,36 @@ d. Determine the position of occurrence of the search string in the given string
     <title>Question 6</title>
 </head>
 <body>
-    <h1>Question 6</h1>
-    <form>
-        <p>Enter the string 1</p>
-        <input type="text" id="str1" >
-        <br>
-        <p>Entre the string 2</p>
-        <input type="text" id="str2">
-        <br><br>
-        <input type="button" onclick="func()" value="submit">
-        <p id="final1"></p><br>
-        <p id="final2"></p><br>
-        <p id="final3"></p><br>
-    </form>
     <script>
         function func()
-        {   var whitespace=0,digits=0,alphabets=0,count=0;
-            a=document.getElementById("str1").value;
-            b=document.getElementById("str2").value;
-            document.getElementById("final1").innerHTML="The string is "+a;
-
-            strr=a.split(" ");
-            for(i=0;i<a.length;i++)
+        {   var white=0,digit=0,alpha=0;
+            var txt=document.getElementById('in').innerHTML=document.getElementById('text').value;
+            var pat=document.getElementById('pattern').value;
+            a=txt.split('');
+            for(i=0;i<txt.length;i++)
             {
-                if(a[i]==" ")
-                    whitespace+=1;
-                else if(a[i]>='A' && a[i]<='Z'||a[i]>='a' && a[i]<='z')
-                    alphabets+=1;
-                else if(a[i]>='0' && a[i]<='9')
-                    digits+=1;
+                if(a[i]==' ')
+                    white+=1;
+                else if(a[i]>='A'&&a[i]<='Z'||a[i]>='a'&&a[i]<='z')
+                    alpha+=1;
+                else if(a[i]>='0'&&a[i]<='9')
+                    digit+=1;
             }
-            document.getElementById("final2").innerHTML="The number of digits: "+digits+"<br>The number of alpha:"+alphabets+"<br>The number of space: "+whitespace;
-            for(i=0;i<strr.length;i++)
-                if(strr[i]==b)
-                    count+=1;
-            f=a.search(b);
+            document.getElementById('d').innerHTML=digit;
+            document.getElementById('w').innerHTML=white;
+            document.getElementById('a').innerHTML=alpha;
+            document.getElementById('o').innerHTML=txt.match(new RegExp(pat,'g')).length;
         }
     </script>
+    <h1>Question 6</h1>
+    Text:<input type="text"  id="text"><br><br>
+    Pattern:<input type="text"  id="pattern"><br><br>
+    <input type="button" value="Submit" onclick="func()"><br><br>
+    Input Text:<span id="in"></span><br><br>
+    No of digit:<span id="d"></span><br><br>
+    No of alphabet:<span id="a"></span><br><br>
+    No of whitespaces:<span id="w"></span><br><br>
+    No of occurance:<span id="o"></span><br><br>
+    Positions(working on it):<span id="pos"></span><br><br>
 </body>
-</html>:
+</html>
